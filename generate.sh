@@ -2,6 +2,7 @@
 
 # Detects if include/*/*.{h,c} src/*/*.{h,c} is a thing
 # (only detects first-level subdirectories, symlink if necessarily)
+
 detect_multi_src_folders ()
 {
 	SUBDIRECTORY_NAME_ARRAY=(include/*/ src/*/)
@@ -19,6 +20,7 @@ detect_multi_src_folders ()
 
 # Prints, with given color (Argument #1), the given string (Argument #2)
 # Uses ANSI escape sequences, tested on XTerm and Terminator
+
 print_with_color ()
 {
 	case $1 in
@@ -66,6 +68,7 @@ print_with_color ()
 
 # Tests to make sure that src exists
 src_test ()
+
 {
 	if [ "$SRC_MUST_EXIST" != "1" ];
 	then
@@ -99,6 +102,7 @@ src_test ()
 }
 
 # Tests to make sure that obj exists
+
 obj_test ()
 {
 	if [ "$OBJ_MUST_EXIST" != "1" ];
@@ -133,6 +137,7 @@ obj_test ()
 }
 
 # Makes sure that there are Cxx source files in src
+
 src_code_test ()
 {
 	array=(src/*.c*)
@@ -152,6 +157,7 @@ src_code_test ()
 }
 
 # Detects the language
+
 detect_language ()
 {
 	array=(src/*.c*)
@@ -167,7 +173,9 @@ detect_language ()
 				;;
 
 			*)
+			
 				# if it's got a weird file extension, it's c++, right?
+				
 				LANGUAGE="C++"
 				;;
 		esac
@@ -178,6 +186,7 @@ detect_language ()
 }
 
 # Detects the header files in src
+
 detect_header_files ()
 {
 	if [ $SUBDIRECTORIES ];
@@ -259,6 +268,7 @@ detect_header_files ()
 }
 
 # Detects the object code to generate based on the names of the source files in C
+
 detect_objects ()
 {
 	if [ $SUBDIRECTORIES ];
