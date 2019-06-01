@@ -1,8 +1,3 @@
-#!/bin/bash
-
-# Detects if include/*/*.{h,c} src/*/*.{h,c} is a thing
-# (only detects first-level subdirectories, symlink if necessarily)
-
 detect_multi_src_folders ()
 {
 	SUBDIRECTORY_NAME_ARRAY=(include/*/ src/*/)
