@@ -503,7 +503,7 @@ if [ "$OBJECTS" != "" ];
 then
 
 	print_with_color "magenta" "Objects: $OBJECTS"
-
+	
 else
 
 	print_with_color "red" "No Objects! D:"
