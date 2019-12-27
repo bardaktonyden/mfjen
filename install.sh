@@ -1,5 +1,4 @@
 #!/bin/bash
-
 uninstall () 
 {
 	if test -e /home/$USER/.bin/mfjen;
